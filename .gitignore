@@ -1,6 +1,7 @@
 /node_modules/
 /.idea/
 yarn.lock
-package.lock.json
+package-lock.json
 /build/
 /dist/
+.node-version
