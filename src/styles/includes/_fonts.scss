@@ -1,0 +1,29 @@
+@font-face {
+	font-family: "reg";
+	src:
+			url("../fonts/GTEestiProDisplay-RegularItalic.woff2?v=183d92c4") format("woff2"),
+			url("../fonts/GTEestiProDisplay-RegularItalic.woff?v=c2f91c7e") format("woff");
+	font-weight: 400;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "reg";
+	src:
+			url("../fonts/GTEestiProDisplay-Regular.woff2?v=2f2b16de") format("woff2"),
+			url("../fonts/GTEestiProDisplay-Regular.woff?v=59d9c968") format("woff");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "medium";
+	src:
+			url("../fonts/GTEestiProDisplay-Medium.woff2?v=711a68c9") format("woff2"),
+			url("../fonts/GTEestiProDisplay-Medium.woff?v=06aed707") format("woff");
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}

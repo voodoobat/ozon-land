@@ -1,4 +1,36 @@
 @import "helpers/core";
 
-@import "includes/base";
+@import "includes/fonts";
 
+#business-dream {
+	font-family: "reg", -apple-system, system-ui, blinkmacsystemfont, "Lucida Grande", "Lucida Sans Unicode", "sans-serif";
+
+	*,
+	&::before,
+	&::after {
+		box-sizing: border-box;
+		outline: none;
+		-webkit-font-smoothing: antialiased;
+	}
+
+	img {
+		display: block;
+		max-width: 100%;
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+	.container-wide {
+		@extend %container;
+		max-width: 1280px;
+	}
+
+	.container {
+		@extend %container;
+		max-width: 1024px;
+	}
+
+	@import "includes/sections/dreamers";
+}

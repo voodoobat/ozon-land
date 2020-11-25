@@ -1,0 +1,31 @@
+.dreamers {
+	background-color: $blue;
+	position: relative;
+
+	&-wrap {
+		display: flex;
+	}
+
+	&-tag {
+		width: 257px;
+		height: 51px;
+		font-weight: 500;
+		font-size: 24px;
+	}
+
+	&-tile {
+		border: 3px solid $dark-blue;
+		background-color: #fff;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: $dark-blue;
+		line-height: 100%;
+	}
+
+	&-garland {
+		position: absolute;
+		top: 0;
+		left: 36%;
+	}
+}

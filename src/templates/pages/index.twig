@@ -2,12 +2,17 @@
 {% set title = 'Index' %}
 
 {% block styles %}
-
+	{# Убрать при билде #}
+	<style>
+		body {
+			margin: 0;
+		}
+	</style>
 {% endblock %}
 
 {% block page %}
 
-
+	{% include '../components/dreamers.twig' %}
 
 {% endblock %}
 
