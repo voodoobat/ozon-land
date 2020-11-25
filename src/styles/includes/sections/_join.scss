@@ -3,7 +3,7 @@ $join-border: 3px solid $dark-blue;
 .join {
 	position: relative;
 	margin: auto;
-	max-width: 1420px;
+	max-width: get-breakpoint(lg) + 30px;
 	padding: 0 15px;
 
 	&-bg {
@@ -41,7 +41,7 @@ $join-border: 3px solid $dark-blue;
 	transform: rotate(- $deg);
 	background: $white;
 	border: $join-border;
-	box-shadow: 20px 20px 0 0 $light-red;
+	box-shadow: 20px 20px 0 0 $pink;
 	font-weight: 600;
 	color: $dark-blue;
 
@@ -63,7 +63,7 @@ $join-border: 3px solid $dark-blue;
 		height: 123px;
 		margin: 100px 0 0;
 		padding: 0 0 11px 24px;
-		box-shadow: 12px 12px 0 0 $light-red;
+		box-shadow: 12px 12px 0 0 $pink;
 
 		&::before {
 			top: -30px;
@@ -106,6 +106,7 @@ $join-border: 3px solid $dark-blue;
 			width: 323px;
 			height: 52px;
 			padding-left: 6px;
+			letter-spacing: .005em;
 			font-size: 20px;
 			line-height: 48px;
 		}
