@@ -1,16 +1,58 @@
 .dreamers {
 	background-color: $blue;
 	position: relative;
+	padding-top: 27px;
+	overflow: hidden;
 
 	&-wrap {
 		display: flex;
+		margin-bottom: 78px;
+
+		@include adaptive(1400) {
+			margin-bottom: 62px;
+		}
+
+		@include adaptive(768) {
+			flex-direction: column;
+		}
+
+		@include adaptive(480) {
+			margin-bottom: 40px;
+		}
 	}
 
-	&-tag {
-		width: 257px;
-		height: 51px;
-		font-weight: 500;
-		font-size: 24px;
+	&-info {
+		padding-top: 24px;
+
+		@include adaptive(1400) {
+			padding-top: 3px;
+		}
+
+		@include adaptive(768) {
+			margin-bottom: 96px;
+		}
+
+		@include adaptive(480) {
+			margin-bottom: 62px;
+		}
+
+		&__image {
+			transform: rotate(10deg);
+			margin-top: 40px;
+			margin-left: 10px;
+			padding: 10px 5px 5px;
+			display: none !important;
+			width: 114px;
+			height: 113px;
+
+			@include adaptive(1400) {
+				display: flex !important;
+			}
+
+			@include adaptive(768) {
+				display: none !important;
+			}
+		}
 	}
 
 	&-tile {
@@ -21,11 +63,654 @@
 		align-items: center;
 		color: $dark-blue;
 		line-height: 100%;
+		position: relative;
+
+		span {
+			@include isIe {
+				max-width: 100%;
+				display: block;
+			}
+		}
+
+		&_with_drop {
+
+			&::after {
+				content: "";
+				position: absolute;
+				top: 8px;
+				bottom: -3px;
+				right: -11px;
+				left: calc(100% + 3px);
+			}
+
+			&::before {
+				content: "";
+				position: absolute;
+				left: 8px;
+				bottom: -11px;
+				right: -11px;
+				height: 8px;
+			}
+		}
+
+		&_drop {
+			&_blue {
+				&::after,
+				&::before {
+					background-color: $light-blue;
+				}
+			}
+
+			&_pink {
+				&::after,
+				&::before {
+					background-color: $pink;
+				}
+			}
+
+			&_green {
+				&::after,
+				&::before {
+					background-color: $green;
+				}
+			}
+
+			&_yellow {
+				&::after,
+				&::before {
+					background-color: $yellow;
+				}
+			}
+		}
 	}
 
-	&-garland {
+	&-tag {
+		width: 262px;
+		height: 52px;
+		font-weight: 500;
+		font-size: 24px;
+		margin-bottom: 60px;
+		justify-content: flex-start;
+		padding-left: 14px;
+
+		@include adaptive(1400) {
+			font-size: 20px;
+			padding-left: 9px;
+			width: 212px;
+			height: 44px;
+			margin-bottom: 30px;
+		}
+
+		@include adaptive(480) {
+			margin-bottom: 52px;
+		}
+	}
+
+	&-title {
+		width: 527px;
+		height: 163px;
+		font-weight: 500;
+		font-size: 60px;
+		line-height: 62px;
+		justify-content: flex-start;
+		align-items: flex-start;
+		padding: 12px 23px;
+		position: relative;
+
+		@include adaptive(1400) {
+			font-size: 48px;
+			line-height: 50px;
+			width: 446px;
+			height: 140px;
+		}
+
+		@include adaptive(640) {
+			width: auto;
+			height: auto;
+			margin-right: -20px;
+			margin-left: auto;
+			padding: 10px 20px 15px;
+		}
+
+		@include adaptive(480) {
+			font-size: 36px;
+			line-height: 40px;
+		}
+	}
+
+	&-subtitle {
+		width: 418px;
+		height: 96px;
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		padding: 20px 80px 20px 24px;
+		transform: translate(56px, 75px);
+		font-size: 24px;
+		line-height: 28px;
+		z-index: 3;
+
+		@include adaptive(1400) {
+			font-size: 20px;
+			line-height: 24px;
+			width: 378px;
+			height: 80px;
+			transform: translate(96px, 63px);
+		}
+
+		@include adaptive(480) {
+			width: auto;
+			height: auto;
+			font-size: 18px;
+			line-height: 20px;
+			padding: 10px 15px 10px 20px;
+			left: 35px;
+			right: -5px;
+			transform: translate(0, 0);
+			top: calc(100% - 10px);
+			bottom: auto;
+		}
+	}
+
+	&-photos {
+		margin-left: auto;
+		display: flex;
+		align-items: flex-start;
+		margin-right: -58px;
+		padding-top: 15px;
+		position: relative;
+
+		@include adaptive(1400) {
+			margin-right: 0;
+			flex-direction: column;
+			align-items: flex-end;
+			padding-top: 0;
+		}
+
+		@include adaptive(768) {
+			flex-direction: row;
+			align-items: flex-start;
+		}
+
+		@include adaptive(480) {
+			flex-direction: column;
+			width: 100%;
+		}
+
+		&__column {
+			margin-left: 50px;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+
+			@include adaptive(1400) {
+				margin-left: 0;
+				margin-top: 36px;
+			}
+
+			@include adaptive(768) {
+				margin-top: 0;
+				margin-left: 48px;
+			}
+
+			@include adaptive(480) {
+				margin-left: 0;
+				margin-top: 44px;
+			}
+		}
+	}
+
+	&-photo {
+		&_type {
+			&_main {
+				padding: 28px 18px 18px;
+
+				@include adaptive(1400) {
+					width: 208px;
+					height: 161px;
+					margin-right: 12px;
+					padding: 36px 12px 28px;
+				}
+
+				@include adaptive(480) {
+					margin-left: auto;
+					margin-right: 0;
+				}
+			}
+
+			&_tree {
+				padding: 18px;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				transform: translate(-54px, 56px);
+
+				@include adaptive(1400) {
+					width: 76px;
+					height: 76px;
+					transform: translate(-25px, 22px);
+					padding: 8px;
+				}
+
+				@include adaptive(480) {
+					transform: translate(-28px, 31px);
+				}
+			}
+
+			&_second {
+				padding: 20px 10px 12px;
+
+				@include adaptive(1400) {
+					width: 156px;
+					height: 160px;
+					padding: 20px 6px 12px;
+				}
+
+				@include adaptive(480) {
+					width: 120px;
+					height: 130px;
+				}
+			}
+
+			&_third {
+				transform: rotate(10deg);
+				margin-top: 56px;
+				margin-left: 2px;
+				padding: 18px 8px 8px;
+
+				@include adaptive(1400) {
+					display: none;
+				}
+			}
+		}
+	}
+
+	&-slogan {
+		height: 115px;
+		margin-right: -4px;
+		font-weight: 500;
+		font-size: 48px;
+		line-height: 50px;
+		margin-bottom: 137px;
+
+		@include adaptive(1400) {
+			font-size: 36px;
+			line-height: 50px;
+			height: 93px;
+			margin-right: 10px;
+			margin-bottom: 92px;
+		}
+
+		@include adaptive(640) {
+			font-size: 32px;
+			line-height: 34px;
+			padding: 18px 0 18px 20px;
+			margin-left: -20px;
+			margin-right: 5px;
+			width: auto;
+			height: auto;
+		}
+
+		@include adaptive(480) {
+			margin-bottom: 76px;
+		}
+	}
+
+	&-clarification {
+		position: absolute;
+		width: 380px;
+		height: 75px;
+		top: 100%;
+		left: 43%;
+		font-size: 24px;
+		line-height: 28px;
+		transform: translateY(-13px);
+		padding: 10px 40px 10px 12px;
+
+		@include adaptive(1400) {
+			font-size: 20px;
+			line-height: 24px;
+			width: 301px;
+			height: 75px;
+			top: 100%;
+			left: 39%;
+			transform: translateY(-10px);
+			padding: 12px 40px 10px 16px;
+		}
+
+		@include adaptive(640) {
+			left: -5px;
+			right: 30px;
+			width: auto;
+			height: auto;
+			font-size: 18px;
+			line-height: 20px;
+			padding: 8px 20px;
+		}
+	}
+
+	&-board {
+		background-color: $yellow;
+		border: 3px solid $dark-blue;
+		padding: 37px 160px 24px 80px;
+		max-width: 860px;
+		border-radius: 5px;
+		color: $dark-blue;
+		font-weight: 350;
+		font-size: 24px;
+		line-height: 28px;
+		margin-left: -4px;
+		position: relative;
+
+		@include adaptive(1400) {
+			max-width: 620px;
+			font-size: 20px;
+			line-height: 24px;
+			padding: 26px 15px 24px 80px;
+		}
+
+		@include adaptive(768) {
+			width: calc(100% - 50px);
+			padding: 22px 34px 20px 15px;
+		}
+
+		@include adaptive(480) {
+			font-size: 16px;
+			line-height: 20px;
+
+		}
+
+		&::after {
+			content: "";
+			position: absolute;
+			top: 14px;
+			right: 15px;
+			background-image: url("data:image/svg+xml,%3Csvg width='7' height='27' viewBox='0 0 7 27' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.63245 26.224C5.38319 26.224 6.80237 24.8048 6.80237 23.054C6.80237 21.3033 5.38319 19.884 3.63245 19.884C1.8817 19.884 0.462402 21.3033 0.462402 23.054C0.462402 24.8048 1.8817 26.224 3.63245 26.224Z' fill='%23090089'/%3E%3Cpath d='M3.63245 16.3339C5.38319 16.3339 6.80237 14.9146 6.80237 13.1639C6.80237 11.4132 5.38319 9.9939 3.63245 9.9939C1.8817 9.9939 0.462402 11.4132 0.462402 13.1639C0.462402 14.9146 1.8817 16.3339 3.63245 16.3339Z' fill='%23090089'/%3E%3Cpath d='M3.63245 6.64395C5.38319 6.64395 6.80237 5.2247 6.80237 3.47395C6.80237 1.72321 5.38319 0.303955 3.63245 0.303955C1.8817 0.303955 0.462402 1.72321 0.462402 3.47395C0.462402 5.2247 1.8817 6.64395 3.63245 6.64395Z' fill='%23090089'/%3E%3C/svg%3E%0A");
+			width: 7px;
+			height: 27px;
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: contain;
+
+			@include adaptive(1400) {
+				top: 8px;
+				right: 8px;
+				width: 6px;
+				height: 22px;
+			}
+		}
+
+		a {
+			font-weight: 500;
+			color: $dark-blue;
+		}
+	}
+
+	&-design {
 		position: absolute;
 		top: 0;
-		left: 36%;
+		bottom: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		z-index: 1;
+
+		& ~ * {
+			z-index: 2;
+			position: relative;
+		}
+
+		&__garland {
+			position: absolute;
+			top: 0;
+			left: 35%;
+
+			@include adaptive(1400) {
+				left: 49%;
+			}
+
+			@include adaptive(768) {
+				left: auto;
+				right: 5%;
+			}
+
+			@include adaptive(480) {
+				width: 112px;
+			}
+		}
+
+		&__ball {
+			position: absolute;
+			top: 0;
+			left: 0;
+			transform: translate(-50%, -50%);
+
+			@include adaptive(1400) {
+				width: 48px;
+			}
+
+			@include adaptive(480) {
+				display: none;
+			}
+		}
+
+		&__latch {
+			position: absolute;
+			left: 50%;
+			top: 0;
+			transform: rotate(-10deg) translate(-50%, -80%);
+		}
+
+		&__yellow-star {
+			position: absolute;
+			right: 0;
+			top: 0;
+			transform: translate(50%, -50%);
+			z-index: 3;
+
+			@include adaptive(480) {
+				width: 30px;
+				height: 30px;
+			}
+		}
+
+		&__red-star {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			transform: translate(45%, 40%);
+
+			@include adaptive(1400) {
+				width: 90px;
+				height: 90px;
+			}
+
+			@include adaptive(480) {
+				width: 78px;
+				height: 78px;
+				right: 12px;
+				bottom: -5px;
+			}
+		}
+
+		&__cane {
+			position: absolute;
+			top: 14px;
+			right: -20px;
+
+			@include adaptive(1400) {
+				height: 55px;
+				width: 50px;
+				top: 8px;
+				right: -10px;
+			}
+		}
+
+		&__box {
+			position: absolute;
+			bottom: -48px;
+			left: 102px;
+
+			@include adaptive(1400) {
+				left: -40px;
+				width: 81px;
+				bottom: 0;
+			}
+
+			@include adaptive(768) {
+				left: -160px;
+			}
+
+			@include adaptive(640) {
+				opacity: 0;
+			}
+
+			@include adaptive(480) {
+				opacity: 1;
+				display: block;
+				left: 140px;
+				width: 80px;
+			}
+		}
+
+		&__star {
+			width: 35px;
+			height: 35px;
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: contain;
+				object-position: center;
+			}
+
+			&_number {
+				&_one {
+					position: absolute;
+					left: 48%;
+					top: 16%;
+					@include adaptive(1400) {
+						display: none;
+					}
+
+					@include adaptive(480) {
+						display: block;
+						left: auto;
+						right: 36px;
+						top: 55%;
+						width: 24px;
+						height: 24px;
+						transform: rotate(16deg);
+					}
+				}
+
+				&_two {
+					position: absolute;
+					top: 39%;
+					transform: rotate(-12deg);
+					@include adaptive(1400) {
+						display: none;
+					}
+				}
+
+				&_three {
+					width: 56px;
+					height: 56px;
+					position: absolute;
+					top: 45%;
+					left: 33%;
+					transform: rotate(11deg);
+
+					@include adaptive(1400) {
+						top: 46%;
+						left: 22%;
+					}
+
+					@include adaptive(768) {
+						left: 5%;
+					}
+
+					@include adaptive(640) {
+						top: 30%;
+					}
+
+					@include adaptive(480) {
+						width: 40px;
+						height: 40px;
+						top: 32%;
+						left: 9%;
+					}
+				}
+
+				&_fourth {
+					position: absolute;
+					top: 73%;
+					left: 8%;
+					transform: rotate(-25deg);
+					width: 42px;
+					height: 42px;
+
+					@include adaptive(1400) {
+						top: 73%;
+						left: 2%;
+						transform: rotate(12deg);
+						width: 50px;
+						height: 50px;
+					}
+
+					@include adaptive(768) {
+						display: none;
+					}
+				}
+			}
+		}
+
+		&__snake-little {
+			position: absolute;
+			top: 44%;
+			left: 2%;
+
+			@include adaptive(1400) {
+				top: 32%;
+				left: -15%;
+			}
+
+			@include adaptive(640) {
+				display: none;
+			}
+
+			@include adaptive(480) {
+				right: -7px;
+				top: 49%;
+				left: auto;
+				width: 79px;
+				display: block;
+			}
+		}
+
+		&__snake-big {
+			position: absolute;
+			right: 1%;
+			top: 64%;
+
+			@include adaptive(1400) {
+				height: 114px;
+				transform: rotate(180deg);
+				right: 4%;
+				top: 77%;
+			}
+
+			@include adaptive(640) {
+				transform: rotate(193deg);
+				right: -8%;
+				top: 78%;
+			}
+		}
 	}
+
+	/**
+		Для отладки
+	 */
+	//[class^="dreamers-design"] {
+	//	display: none;
+	//}
 }
