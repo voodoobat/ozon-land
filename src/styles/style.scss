@@ -16,6 +16,8 @@
 	img {
 		display: block;
 		max-width: 100%;
+		pointer-events: none;
+		user-select: none;
 	}
 
 	a {
@@ -25,11 +27,30 @@
 	.container-wide {
 		@extend %container;
 		max-width: 1280px;
+
+		@include adaptive(1400) {
+			max-width: 810px;
+		}
 	}
 
 	.container {
 		@extend %container;
-		max-width: 1024px;
+		max-width: 950px;
+
+		@include adaptive(1400){
+			max-width: 650px;
+		}
+	}
+
+	.container-full {
+		@extend %container;
+		max-width: 1416px;
+		padding-left: 0;
+		padding-right: 0;
+
+		@include adaptive(1400) {
+			max-width: 936px;
+		}
 	}
 
 	@import "includes/sections/dreamers";
