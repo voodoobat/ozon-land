@@ -1,12 +1,17 @@
-$join-border: 3px solid $dark-blue;
+$join-sm: 641px;
 
 .join {
 	position: relative;
 	margin: auto;
 	max-width: get-breakpoint(lg) + 30px;
-	padding: 0 15px;
+
+	@include media-up($join-sm) {
+		padding: 0 15px;
+	}
 
 	&-bg {
+		@include hide-down(860px);
+
 		content: '';
 		position: absolute;
 		left: 50%;
@@ -23,7 +28,15 @@ $join-border: 3px solid $dark-blue;
 	}
 
 	@include media-down(lg) {
-		max-width: 940px;
+		max-width: get-breakpoint(md) + 30px;
+	}
+}
+
+.join-banner-box {
+	@include media-down($join-sm) {
+		width: 100%;
+		padding-bottom: 75px;
+		overflow: hidden;
 	}
 }
 
@@ -40,12 +53,13 @@ $join-border: 3px solid $dark-blue;
 	padding: 0 0 10px 18px;
 	transform: rotate(- $deg);
 	background: $white;
-	border: $join-border;
+	border: $dark-blue-border;
 	box-shadow: 20px 20px 0 0 $pink;
 	font-weight: 600;
 	color: $dark-blue;
 
 	&::before {
+		@include hide-down($join-sm);
 		content: '';
 		position: absolute;
 		top: -37px;
@@ -73,6 +87,13 @@ $join-border: 3px solid $dark-blue;
 		}
 	}
 
+	@include media-down($join-sm) {
+		width: 100%;
+		height: auto;
+		left: 10px;
+		box-shadow: 20px 20px 0 0 $pink;
+	}
+
 	&-txt {
 		font-style: italic;
 		font-size: 48px;
@@ -82,6 +103,12 @@ $join-border: 3px solid $dark-blue;
 		@include media-down(lg) {
 			font-size: 36px;
 			line-height: 40px;
+		}
+
+		@include media-down($join-sm) {
+			padding-top: 12px;
+			font-size: 32px;
+			line-height: 34px;
 		}
 	}
 
@@ -94,7 +121,7 @@ $join-border: 3px solid $dark-blue;
 		padding-left: 12px;
 		transform: rotate($deg);
 		background: $white;
-		border: $join-border;
+		border: $dark-blue-border;
 		line-height: 52px; // height - border-width
 		letter-spacing: .015em;
 		font-size: 24px;
@@ -110,6 +137,19 @@ $join-border: 3px solid $dark-blue;
 			font-size: 20px;
 			line-height: 48px;
 		}
+
+		@include media-down($join-sm) {
+			left: auto;
+			right: 0;
+			bottom: -78px;
+			height: auto;
+			width: 82%;
+			max-width: 285px;
+			font-size: 16px;
+			line-height: 18px;
+			border-width: 2px;
+			padding: 11px 25px 11px 16px;
+		}
 	}
 }
 
@@ -120,31 +160,79 @@ $join-border: 3px solid $dark-blue;
 	@include media-down(lg) {
 		margin: 75px 0 0;
 	}
+
+	@include media-down($join-sm) {
+		margin-top: 0;
+	}
 }
 
 $join-num-width: 125px;
 $join-step-height: 102px;
 $join-step-height-md: 87px;
 $join-num-margin: 35px;
-
 $join-step-offset: $join-num-width + $join-num-margin;
 
 .join-step {
 	$shadow-size: 10px;
 
+	position: relative;
 	display: flex;
 	color: $dark-blue;
 	margin-bottom: 30px;
 
+	@include media-up(lg) {
+		&_2 {
+			margin-left: $join-step-offset;
+		}
+
+		&_3 {
+			margin-left: $join-step-offset * 2;
+		}
+	}
+
 	@include media-down(lg) {
 		margin-bottom: 22px;
+	}
+
+	@include media-down($join-sm) {
+		display: block;
+		padding-top: 40px;
+		margin-bottom: 0;
+		padding-right: 7px;
+		overflow: hidden;
+
+		&::before {
+			position: absolute;
+		}
+
+		&_1 {
+			padding-top: 36px;
+
+			&::before {
+				content: url(/assets/img/design/join/join-step-icon-1.svg);
+				top: 13px;
+				left: 192px;
+			}
+		}
+
+		&_2::before {
+			content: url(/assets/img/design/join/join-step-icon-2.svg);
+			top: 22px;
+			right: 0;
+		}
+
+		&_3::before {
+			content: url(/assets/img/design/join/join-step-icon-3.svg);
+			top: 5px;
+			left: 140px;
+		}
 	}
 
 	&-num {
 		min-width: $join-num-width;
 		height: $join-step-height;
 		margin-right: $join-num-margin;
-		border: $join-border;
+		border: $dark-blue-border;
 		background: $white;
 		box-shadow: 10px 10px 0 0 $light-blue;
 		text-align: center;
@@ -159,6 +247,16 @@ $join-step-offset: $join-num-width + $join-num-margin;
 			font-size: 56px;
 			line-height: 81px;
 		}
+
+		@include media-down($join-sm) {
+			width: 68px;
+			height: 56px;
+			min-width: auto;
+			margin-left: 15px;
+			margin-bottom: 15px;
+			border-width: 2px;
+			line-height: 52px;
+		}
 	}
 
 	&-txt {
@@ -166,24 +264,26 @@ $join-step-offset: $join-num-width + $join-num-margin;
 		display: flex;
 		align-items: center;
 		width: 532px;
-		padding: 0 20px;
+		padding: 0 30px 0 20px;
 		min-height: $join-step-height + 10px;
 		background: $orange;
-		border: $join-border;
+		border: $dark-blue-border;
 		border-radius: 4px;
 		font-size: 24px;
 		font-weight: 100;
 
 		&::after {
-			content: url(/assets/img/design/join/join-vertical-dots.svg);
+			content: '';
+			position: absolute;
+			top: 0;
+			right: 5px;
+			width: 25px;
+			height: 100%;
+			background: url(/assets/img/design/join/join-vertical-dots.svg) 50% no-repeat;
 		}
 
 		+ .join-step-txt {
 			margin-top: 12px;
-		}
-
-		.accent {
-			color: $red;
 		}
 
 		@include media-down(lg) {
@@ -192,15 +292,22 @@ $join-step-offset: $join-num-width + $join-num-margin;
 			font-size: 22px;
 			line-height: 1.1;
 		}
+
+		@include media-down($join-sm) {
+			width: auto;
+			left: -5px;
+			min-height: 90px;
+			border-width: 2px;
+			font-size: 15px;
+			line-height: 20px;
+
+			+ .join-step-txt {
+				margin-top: 8px;
+			}
+		}
 	}
 
-	@include media-up(lg) {
-		&--2 {
-			margin-left: $join-step-offset;
-		}
-
-		&--3 {
-			margin-left: $join-step-offset * 2;
-		}
+	&-accent {
+		color: $red;
 	}
 }
