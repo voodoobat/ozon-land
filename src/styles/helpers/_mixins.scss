@@ -78,8 +78,58 @@ $browser-context: 16; // Default
   @return #{$pixels/$context}em;
 }
 
-
 @mixin columnBreak() {
   page-break-inside: avoid;
   break-inside: avoid-column;
+}
+
+@function get-breakpoint-value($query, $data) {
+	$value: null;
+
+	@if type-of($query)==number {
+		$value: $query
+	}
+
+	@if type-of($query)==string {
+		$value: map-get($data, $query);
+	}
+
+	@return $value;
+}
+
+@mixin media-up($query, $data: $breakpoints) {
+	$value: get-breakpoint-value($query, $data);
+
+	@media (min-width: $value) {
+		@content;
+	}
+}
+
+@mixin media-down($query, $data: $breakpoints) {
+	$value: get-breakpoint-value($query, $data);
+
+	@media (max-width: $value - .02) {
+		@content;
+	}
+}
+
+@mixin media-between($min-query, $max-query, $data: $breakpoints) {
+	$min-value: get-breakpoint-value($min-query, $data);
+	$max-value: get-breakpoint-value($max-query, $data);
+
+	@media (max-width: $max-value - .02) and (min-width: $min-value) {
+		@content;
+	}
+}
+
+@mixin hide-down($query) {
+	@include media-down($query) {
+		display: none;
+	}
+}
+
+@mixin hide-up($query) {
+	@include media-up($query) {
+		display: none;
+	}
 }
