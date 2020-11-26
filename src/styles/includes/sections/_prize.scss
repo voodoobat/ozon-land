@@ -1,0 +1,175 @@
+.prize {
+	margin-top: -5px;
+	position: relative;
+	z-index: 10;
+}
+
+.prize-top {
+	position: relative;
+	margin: auto;
+	width: map-get($breakpoints, lg) + 8;
+	height: 80px;
+	border: 5px solid $dark-blue;
+	border-bottom-width: 0;
+	border-radius: 0 10px 0 0;
+
+	&::before {
+		content: url(/assets/img/design/join/join-vertical-dots.svg);
+		position: absolute;
+		right: 15px;
+		top: 20px;
+	}
+}
+
+.prize-head {
+	text-align: center;
+
+	&-txt {
+		display: inline-block;
+		padding: 0 105px;
+		line-height: 90px;
+		background: url(/assets/img/design/prize/icon-prize.svg) no-repeat;
+		font-weight: 500;
+		font-size: 48px;
+		color: $dark-blue;
+	}
+}
+
+.prize-body {
+	position: relative;
+	margin: 0 auto 120px;
+	max-width: 1070px;
+	background:
+		url(/assets/img/design/prize/sock.png) no-repeat,
+		url(/assets/img/design/prize/prize-bg-lg.svg) no-repeat,
+		url(/assets/img/design/prize/prize-grid.svg) no-repeat;
+	background-position: 190px 715px, 0 0, 50% 0;
+	background-size: 104px 158px, 1000px, 936px;
+
+	&-grid {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		margin: 40px auto 50px;
+		width: 936px;
+		height: 936px;
+
+		@include media-down(lg) {
+			width: 776px;
+			height: 776px;
+		}
+	}
+}
+
+.prize-txt-box {
+	display: flex;
+	align-items: center;
+	position: absolute;
+	padding: 6px 6px 6px 12px;
+	background: $white;
+	border: $dark-blue-border;
+	color: $dark-blue;
+	height: 86px;
+
+	&_circle::before {
+		content: '';
+		position: absolute;
+		width: 26px;
+		height: 26px;
+		border: 3px solid $dark-blue;
+		border-radius: 50%;
+	}
+}
+
+.prize-txt {
+	display: inline-block;
+	font-size: 24px;
+	line-height: 1.1;
+	font-weight: 300;
+}
+
+.prize-column-box {
+	max-width: 50%;
+}
+
+.prize-column {
+	position: relative;
+
+	&_500 {
+		top: 15px;
+		right: 75px;
+
+		.prize-txt-box {
+			bottom: -35px;
+			right: 10px;
+			left: -80px;
+			min-height: 100px;
+		}
+	}
+
+	&_200 {
+		top: 100px;
+		right: 33px;
+
+		.prize-txt-box {
+			left: 100px;
+			bottom: -35px;
+			width: 430px;
+
+			&::before {
+				top: -10px;
+				left: -20px;
+				background: $yellow;
+			}
+		}
+	}
+
+	&_100 {
+		bottom: 120px;
+		left: 75px;
+
+		.prize-txt-box {
+			right: -70px;
+			bottom: -35px;
+			left: -20px;
+			min-height: 90px;
+
+			&::before {
+				content: '';
+				position: absolute;
+				top: -55px;
+				right: 60px;
+				width: 72px;
+				height: 73px;
+				background: url(/assets/img/design/prize/prize-icon-star.svg);
+				background-size: 100%;
+			}
+		}
+	}
+
+	&_20 {
+		right: 45px;
+		bottom: 25px;
+
+		.prize-txt-box {
+			right: -82px;
+			bottom: -43px;
+			left: 25px;
+
+			&::before {
+				top: -20px;
+				left: 30px;
+				background: $pink;
+			}
+		}
+	}
+}
+
+.prize-businessmen {
+	position: absolute;
+	bottom: 45px;
+	left: 355px;
+	width: 273px;
+	height: 118px;
+	background: url(/assets/img/design/prize/businessmen.svg) no-repeat;
+}
