@@ -392,7 +392,7 @@ $join-step-offset: $join-num-width + $join-num-margin;
 		}
 
 		@include media-down(sm) {
-		  right: -1px;
+			right: -1px;
 			bottom: -35px;
 		}
 	}
