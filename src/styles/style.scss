@@ -33,11 +33,20 @@
 		}
 	}
 
+	.container-semi {
+		@extend %container;
+		max-width: 1130px;
+
+		@include adaptive(1024) {
+			max-width: 800px;
+		}
+	}
+
 	.container {
 		@extend %container;
 		max-width: 950px;
 
-		@include adaptive(1400){
+		@include adaptive(1400) {
 			max-width: 650px;
 		}
 	}
@@ -55,4 +64,5 @@
 
 	@import "includes/sections/dreamers";
 	@import "includes/sections/join";
+	@import "includes/sections/announce-winners";
 }
