@@ -204,6 +204,7 @@ $join-step-offset: $join-num-width + $join-num-margin;
 		padding-top: 40px;
 		margin-bottom: 0;
 		padding-right: 7px;
+		max-width: 480px;
 		overflow: hidden;
 
 		&::before {
@@ -216,20 +217,20 @@ $join-step-offset: $join-num-width + $join-num-margin;
 			&::before {
 				content: url(/assets/img/design/join/join-step-icon-1.svg);
 				top: 13px;
-				right: 70px;
+				left: 193px;
 			}
 		}
 
 		&_2::before {
 			content: url(/assets/img/design/join/join-step-icon-2.svg);
-			top: 22px;
-			right: 0;
+			top: 20px;
+			left: 210px;
 		}
 
 		&_3::before {
 			content: url(/assets/img/design/join/join-step-icon-3.svg);
 			top: 5px;
-			right: 80px;
+			left: 140px;
 		}
 	}
 
@@ -303,12 +304,15 @@ $join-step-offset: $join-num-width + $join-num-margin;
 			left: -5px;
 			min-height: 90px;
 			border-width: 2px;
-			font-size: 15px;
-			line-height: 20px;
+			font-size: 20px;
 
 			+ .join-step-txt {
 				margin-top: 8px;
 			}
+		}
+
+		@include media-down(xs) {
+			font-size: 15px;
 		}
 	}
 
