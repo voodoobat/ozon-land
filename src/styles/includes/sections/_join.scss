@@ -317,115 +317,116 @@ $join-step-offset: $join-num-width + $join-num-margin;
 	}
 }
 
-.join-winners-box {
-	@include media-down(sm) {
-		padding: 35px 0;
-		overflow: hidden;
-		max-width: 100%;
-	}
-}
+//.join-winners-box {
+//	@include media-down(sm) {
+//		padding: 35px 0;
+//		overflow: hidden;
+//		max-width: 100%;
+//	}
+//}
 
-.join-winners {
-	position: relative;
-	max-width: 1070px;
-	box-shadow: 20px 20px 0 0 $blue;
-	border: $dark-blue-border;
 
-	@include media-up(lg) {
-		margin: auto;
-		right: 10px;
-	}
-
-	@include media-down(lg) {
-		width: 85%;
-		max-width: 760px;
-		box-shadow: 10px 10px 0 0 $blue;
-	}
-
-	@include media-down(sm) {
-		left: -5px;
-		min-width: 315px;
-		box-shadow: 15px 15px 0 0 $blue;
-		padding-left: 5px;
-		border-width: 2px;
-	}
-
-	&::before,
-	&::after {
-		content: '';
-		position: absolute;
-		width: 65px;
-		height: 65px;
-		background: url(/assets/img/design/star.svg) no-repeat;
-		background-size: 100%;
-
-		@include media-down(lg) {
-			width: 50px;
-			height: 50px;
-		}
-	}
-
-	&::before {
-		top: -30px;
-		left: 40px;
-		transform: scaleX(-1);
-
-		@include media-down(lg) {
-			top: -25px;
-			left: 27px;
-		}
-
-		@include media-down(sm) {
-			top: -35px;
-			left: 15px;
-			transform: none;
-		}
-	}
-
-	&::after {
-		right: 16px;
-		bottom: -42px;
-
-		@include media-down(lg) {
-			right: 12px;
-			bottom: -30px;
-		}
-
-		@include media-down(sm) {
-			right: -1px;
-			bottom: -35px;
-		}
-	}
-
-	&-txt {
-		padding: 25px;
-		font-size: 48px;
-		font-weight: 600;
-		line-height: 1.1;
-		color: $dark-blue;
-
-		@include media-up(md) {
-			text-align: center;
-		}
-
-		@include media-down(lg) {
-			padding: 20px;
-			font-size: 35px;
-		}
-
-		@include media-down(md) {
-			text-align: left;
-
-			br {
-				display: none;
-			}
-		}
-
-		@include media-down(sm) {
-			padding: 5px 10px;
-			font-size: 28px;
-			line-height: 1.15;
-			font-weight: 500;
-		}
-	}
-}
+//.join-winners {
+//	position: relative;
+//	max-width: 1070px;
+//	box-shadow: 20px 20px 0 0 $blue;
+//	border: $dark-blue-border;
+//
+//	@include media-up(lg) {
+//		margin: auto;
+//		right: 10px;
+//	}
+//
+//	@include media-down(lg) {
+//		width: 85%;
+//		max-width: 760px;
+//		box-shadow: 10px 10px 0 0 $blue;
+//	}
+//
+//	@include media-down(sm) {
+//		left: -5px;
+//		min-width: 315px;
+//		box-shadow: 15px 15px 0 0 $blue;
+//		padding-left: 5px;
+//		border-width: 2px;
+//	}
+//
+//	&::before,
+//	&::after {
+//		content: '';
+//		position: absolute;
+//		width: 65px;
+//		height: 65px;
+//		background: url(/assets/img/design/star.svg) no-repeat;
+//		background-size: 100%;
+//
+//		@include media-down(lg) {
+//			width: 50px;
+//			height: 50px;
+//		}
+//	}
+//
+//	&::before {
+//		top: -30px;
+//		left: 40px;
+//		transform: scaleX(-1);
+//
+//		@include media-down(lg) {
+//			top: -25px;
+//			left: 27px;
+//		}
+//
+//		@include media-down(sm) {
+//			top: -35px;
+//			left: 15px;
+//			transform: none;
+//		}
+//	}
+//
+//	&::after {
+//		right: 16px;
+//		bottom: -42px;
+//
+//		@include media-down(lg) {
+//			right: 12px;
+//			bottom: -30px;
+//		}
+//
+//		@include media-down(sm) {
+//			right: -1px;
+//			bottom: -35px;
+//		}
+//	}
+//
+//	&-txt {
+//		padding: 25px;
+//		font-size: 48px;
+//		font-weight: 600;
+//		line-height: 1.1;
+//		color: $dark-blue;
+//
+//		@include media-up(md) {
+//			text-align: center;
+//		}
+//
+//		@include media-down(lg) {
+//			padding: 20px;
+//			font-size: 35px;
+//		}
+//
+//		@include media-down(md) {
+//			text-align: left;
+//
+//			br {
+//				display: none;
+//			}
+//		}
+//
+//		@include media-down(sm) {
+//			padding: 5px 10px;
+//			font-size: 28px;
+//			line-height: 1.15;
+//			font-weight: 500;
+//		}
+//	}
+//}

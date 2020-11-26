@@ -1,0 +1,97 @@
+.announce-winners {
+	padding: 34px 0;
+
+	&__tile {
+		width: calc(100% - 24px);
+		font-weight: 500;
+		font-size: 48px;
+		line-height: 50px;
+		color: $dark-blue;
+		height: 158px;
+		background-color: #fff;
+		border: 3px solid $dark-blue;
+		text-align: center;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		box-shadow: 21px 21px 0 0 $blue;
+		position: relative;
+
+		@include adaptive(1024) {
+			font-size: 36px;
+			line-height: 40px;
+			height: 115px;
+			width: calc(100% - 20px);
+		}
+
+		@include adaptive(768) {
+			width: auto;
+			font-size: 28px;
+			line-height: 32px;
+		}
+
+		@include adaptive(640) {
+			height: auto;
+			padding: 8px 10px 8px 35px;
+			margin-left: -40px;
+			margin-right: -5px;
+			text-align: left;
+		}
+
+		&::before {
+			content: "";
+			position: absolute;
+			background-image: url("data:image/svg+xml,%3Csvg width='67' height='70' viewBox='0 0 67 70' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M26.4405 2L41.9072 18.8828L64.5994 15.7308L53.3001 35.6367L63.3196 56.2178L40.8684 51.6373L24.363 67.509L21.787 44.7723L1.57025 34.0012L22.4293 24.5284L26.4405 2Z' fill='%23FAE670'/%3E%3Cpath d='M26.4405 2L41.9072 18.8828L64.5994 15.7308L53.3001 35.6367L63.3196 56.2178L40.8684 51.6373L24.363 67.509L21.787 44.7723L1.57025 34.0012L22.4293 24.5284L26.4405 2Z' stroke='%23090089' stroke-width='3' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+			width: 67px;
+			height: 70px;
+			background-repeat: no-repeat;
+			background-size: contain;
+			background-position: center center;
+			left: 39px;
+			top: -33px;
+
+			@include adaptive(1024) {
+				width: 45px;
+				height: 48px;
+				left: 25px;
+				top: -23px;
+			}
+
+			@include adaptive(640) {
+				left: 36px;
+				top: -38px;
+				transform: rotate(109deg);
+			}
+		}
+
+		&::after {
+			content: "";
+			position: absolute;
+			background-image: url("data:image/svg+xml,%3Csvg width='67' height='69' viewBox='0 0 67 69' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M43.0696 2L45.2784 24.7753L65.319 35.8697L44.31 45.0061L39.9372 67.465L24.744 50.336L2 53.1237L13.6194 33.3993L3.93916 12.6645L26.313 17.6039L43.0696 2Z' fill='%23FAE670'/%3E%3Cpath d='M43.0696 2L45.2784 24.7753L65.319 35.8697L44.31 45.0061L39.9372 67.465L24.744 50.336L2 53.1237L13.6194 33.3993L3.93916 12.6645L26.313 17.6039L43.0696 2Z' stroke='%23090089' stroke-width='3' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+			width: 67px;
+			height: 69px;
+			background-repeat: no-repeat;
+			background-size: contain;
+			background-position: center center;
+			right: 17px;
+			bottom: -47px;
+			@include adaptive(1024) {
+				width: 45px;
+				height: 48px;
+				right: 6px;
+				bottom: -36px;
+			}
+
+			@include adaptive(640) {
+				right: 2px;
+				bottom: -29px;
+			}
+		}
+
+		br {
+			@include adaptive(640) {
+				display: none;
+			}
+		}
+	}
+}
