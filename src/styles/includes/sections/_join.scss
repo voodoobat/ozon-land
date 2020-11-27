@@ -49,6 +49,10 @@
 			left: 0;
 		}
 	}
+
+	@include media-between(sm, md) {
+		padding-top: 50px;
+	}
 }
 
 .join-banner {
