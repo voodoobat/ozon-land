@@ -19,7 +19,7 @@
 		z-index: -1;
 
 		@include media-down(lg) {
-			margin-left: 198px;
+			margin-left: 263px;
 			width: 192px;
 		}
 	}
@@ -30,6 +30,12 @@
 }
 
 .join-banner-box {
+	@include media-down(lg) {
+		max-width: 770px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
 	@include media-down(sm) {
 		width: 100%;
 		padding-top: 115px;
@@ -42,6 +48,10 @@
 			top: 30px;
 			left: 0;
 		}
+	}
+
+	@include media-between(sm, md) {
+		padding-top: 50px;
 	}
 }
 
@@ -166,7 +176,8 @@
 	max-width: 1250px;
 
 	@include media-down(lg) {
-		margin: 75px 0 0;
+		margin: 75px auto 0;
+		max-width: 770px;
 	}
 
 	@include media-down(sm) {
