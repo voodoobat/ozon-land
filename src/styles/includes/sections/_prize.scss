@@ -58,7 +58,6 @@
 
 		@include media-between(md, lg) {
 			position: relative;
-			right: 84px;
 		}
 
 		@include media-down(md) {
@@ -98,7 +97,7 @@
 
 	@include media-down(lg) {
 		&::before {
-			transform: translate(413px, 40px) scale(1.05);
+			transform: translate(400px, 36px) scale(1.05);
 		}
 	}
 
@@ -129,7 +128,6 @@
 
 		@include media-between(md, lg) {
 			position: relative;
-			right: 84px;
 			margin-bottom: 108px;
 		}
 
