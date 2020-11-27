@@ -1,4 +1,4 @@
-{% extends '../layouts/default.twig' %}
+{% extends '../layouts/default-no-js.twig' %}
 {% set title = 'Index' %}
 {% set breakpoints = [
 	{ key: 'lg', val: 1416 },
@@ -8,11 +8,11 @@
 
 {% block styles %}
 	{# Убрать при билде #}
-{#	<style>#}
-{#		body {#}
-{#			margin: 0;#}
-{#		}#}
-{#	</style>#}
+	{#	<style>#}
+	{#		body {#}
+	{#			margin: 0;#}
+	{#		}#}
+	{#	</style>#}
 {% endblock %}
 
 {% block page %}
@@ -21,8 +21,8 @@
 	{% include '../components/prize.twig' %}
 	{% include '../components/join.twig' %}
 	{% include '../components/announce-winners.twig' %}
-	{% include '../components/winners.twig' %}
-	{% include '../components/feed.twig' %}
+	{% include '../components/winners-second-no-js.twig' %}
+	{% include '../components/feed-no-js.twig' %}
 	{% include '../components/footer.twig' %}
 {% endblock %}
 

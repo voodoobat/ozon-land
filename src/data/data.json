@@ -29,5 +29,103 @@
 			"position": "Puky Russia:\nбеговеломагазин",
 			"description": "Мы мечтали рассказать всей стране о наших беговелах, масштабировать бизнес и расширить аудиторию. Благодаря Ozon нам повезло осуществить нашу мечту. Наши люди нас нашли, а мы их! Мы счастливы развиваться на Ozon и давать возможность родителям из всех уголков России оценить качество немецких беговелов и велосипедов Puky!"
 		}
+	],
+	"winners": [
+		{
+			"img": "",
+			"price": "500 000 ₽",
+			"color": "pink",
+			"icon": "star"
+		},
+		{
+			"img": "",
+			"price": "200 000 ₽",
+			"color": "green",
+			"icon": "red-star"
+		},
+		{
+			"img": "",
+			"price": "200 000 ₽",
+			"color": "green",
+			"icon": "red-star"
+		},
+		{
+			"img": "",
+			"price": "100 000 ₽",
+			"color": "blue",
+			"icon": "circle"
+		},
+		{
+			"img": "",
+			"price": "100 000 ₽",
+			"color": "blue",
+			"icon": "circle"
+		},
+		{
+			"img": "",
+			"price": "100 000 ₽",
+			"color": "blue",
+			"icon": "circle"
+		},
+		{
+			"img": "",
+			"price": "20 000 ₽",
+			"color": "light-blue",
+			"icon": ""
+		},
+		{
+			"img": "",
+			"price": "20 000 ₽",
+			"color": "light-blue",
+			"icon": ""
+		},
+		{
+			"img": "",
+			"price": "20 000 ₽",
+			"color": "light-blue",
+			"icon": ""
+		},
+		{
+			"img": "",
+			"price": "20 000 ₽",
+			"color": "light-blue",
+			"icon": ""
+		},
+		{
+			"img": "",
+			"price": "20 000 ₽",
+			"color": "light-blue",
+			"icon": ""
+		},
+		{
+			"img": "",
+			"price": "20 000 ₽",
+			"color": "light-blue",
+			"icon": ""
+		},
+		{
+			"img": "",
+			"price": "20 000 ₽",
+			"color": "light-blue",
+			"icon": ""
+		},
+		{
+			"img": "",
+			"price": "20 000 ₽",
+			"color": "light-blue",
+			"icon": ""
+		},
+		{
+			"img": "",
+			"price": "20 000 ₽",
+			"color": "light-blue",
+			"icon": ""
+		},
+		{
+			"img": "",
+			"price": "20 000 ₽",
+			"color": "light-blue",
+			"icon": ""
+		}
 	]
 }
