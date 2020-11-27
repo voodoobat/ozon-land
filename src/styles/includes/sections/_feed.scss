@@ -1,0 +1,177 @@
+.feed {
+	padding-bottom: 30px;
+	position: relative;
+	color: $dark-blue;
+
+	&-container {
+		@extend %container;
+		max-width: 950px;
+
+		@include adaptive(1024) {
+			max-width: 810px;
+		}
+	}
+
+	&-link {
+		width: 273px;
+		height: 118px;
+		background: url(/assets/img/design/prize/businessmen.svg) no-repeat;
+		background-size: 100%;
+		display: block;
+		margin: 0 auto 18px;
+
+		@include adaptive(1024) {
+			width: 206px;
+			height: 94px;
+			margin-bottom: 6px;
+		}
+
+		@include adaptive(480) {
+			margin-bottom: 24px;
+		}
+	}
+
+	&-title {
+		text-align: center;
+		margin-bottom: 60px;
+
+		@include adaptive(1024) {
+			margin-bottom: 40px;
+		}
+		@include adaptive(480) {
+			text-align: left;
+			margin-right: -5px;
+		}
+
+		&_no_js {
+			margin-bottom: 6px;
+		}
+	}
+
+	&-description {
+		font-size: 18px;
+		line-height: 22px;
+	}
+
+	&-wrap {
+		position: relative;
+		@include adaptive(900) {
+			padding: 0 20px;
+		}
+	}
+
+	&-arrow {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		cursor: pointer;
+
+		&_role {
+			&_prev {
+				left: -60px;
+
+				@include adaptive(1024) {
+					left: -35px;
+				}
+
+				@include adaptive(900) {
+					left: -5px;
+				}
+			}
+
+			&_next {
+				right: -60px;
+
+				@include adaptive(1024) {
+					right: -35px;
+				}
+
+				@include adaptive(900) {
+					right: -5px;
+				}
+			}
+		}
+	}
+
+	&-slider {
+		height: 448px;
+
+		@include adaptive(1024) {
+			height: 374px;
+		}
+
+		@include adaptive(900) {
+			height: 230px;
+		}
+	}
+
+	&-slide {
+		height: calc((100% - 24px) / 2);
+		background-color: #e0ebff;
+
+		@include adaptive(1024) {
+			height: calc((100% - 20px) / 2);
+		}
+
+		@include adaptive(900) {
+			width: 230px;
+			height: 230px;
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: center;
+		}
+	}
+
+	&-design {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 1;
+		pointer-events: none;
+
+		& ~ .feed-container {
+			z-index: 2;
+			position: relative;
+		}
+
+		&__ball {
+			position: absolute;
+			top: 22%;
+			left: 3%;
+
+			@include adaptive(1024) {
+				top: 13%;
+				left: 3%;
+				width: 93px;
+				transform: rotate(4deg);
+			}
+
+			@include adaptive(900) {
+				display: none;
+			}
+		}
+
+		&__pane {
+			position: absolute;
+			bottom: 8%;
+			right: 4%;
+
+			@include adaptive(1024) {
+				bottom: 13%;
+				right: 3%;
+				width: 120px;
+				height: 97px;
+			}
+
+			@include adaptive(900) {
+				display: none;
+			}
+		}
+	}
+}

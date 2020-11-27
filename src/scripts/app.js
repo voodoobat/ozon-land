@@ -1,1 +1,2 @@
 import './winners';
+import './feed'

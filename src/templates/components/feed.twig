@@ -1,0 +1,31 @@
+<section class="feed">
+	<div class="feed-design">
+		<img src="/assets/img/design/feed/ball.svg" alt="Шарик" class="feed-design__ball">
+		<img src="/assets/img/design/feed/pane.svg" alt="Палочка" class="feed-design__pane">
+	</div>
+	<div class="feed-container">
+		<a href="#" class="feed-link"></a>
+		<h1 class="feed-title">Мечтайте больше, мечтайте о большем!</h1>
+		<div class="feed-wrap">
+			<div class="feed-arrow feed-arrow_role_prev">
+				<svg width="16" height="32" viewBox="0 0 16 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M13.65 31.82L0 15.19L13.69 0L15.92 2.01L3.96 15.28L15.97 29.92L13.65 31.82Z"
+						  fill="black" />
+				</svg>
+			</div>
+			<div class="feed-slider swiper-container">
+				<div class="swiper-wrapper">
+					{% for i in 1..16 %}
+						<div class="feed-slide swiper-slide"></div>
+					{% endfor %}
+				</div>
+			</div>
+			<div class="feed-arrow feed-arrow_role_next">
+				<svg width="16" height="32" viewBox="0 0 16 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M2.32 2.93243e-05L15.97 16.63L2.28 31.8201L0.0500042 29.8101L12.01 16.5401L5.47671e-06 1.90003L2.32 2.93243e-05Z"
+						  fill="black" />
+				</svg>
+			</div>
+		</div>
+	</div>
+</section>
