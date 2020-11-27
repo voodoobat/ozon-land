@@ -9,13 +9,29 @@
 	</div>
 	<div class="prize-body">
 		<div class="prize-body-grid">
+			<div class="prize-bg-box">
+				<img class="prize-bg prize-bg_circle" src="/assets/img/design/prize/prize-circle.svg" alt="">
+				<img class="prize-bg prize-bg_garland" src="/assets/img/design/prize/prize-garland.svg" alt="">
+				<img class="prize-bg prize-bg_pink-curve" src="/assets/img/design/prize/prize-pink-curve.svg" alt="">
+				<img class="prize-bg prize-bg_flag" src="/assets/img/design/prize/prize-flag.svg" alt="">
+				<img class="prize-bg prize-bg_sock" src="/assets/img/design/prize/prize-sock.png" alt="">
+			</div>
 			<div class="prize-column-box">
 				<div class="prize-column prize-column_500">
-					<div class="prize-column-picture">
-						<img src="/assets/img/design/prize/500.png"
-								 srcset="/assets/img/design/prize/500@2x.png 2x, /assets/img/design/prize/500@3x.png 3x"
-								 alt="500 000 ₽">
-					</div>
+					<picture class="prize-picture">
+						{% for point in breakpoints %}
+							<source
+								media="(min-width: {{ point.val }}px)"
+								srcset="
+									/assets/img/design/prize/500{{ point.key }}.png,
+									/assets/img/design/prize/500{{ point.key }}@2x.png 2x,
+									/assets/img/design/prize/500{{ point.key }}@3x.png 3x">
+							{% endfor %}
+						<img
+							src="/assets/img/design/prize/500sm.png"
+							srcset="/assets/img/design/prize/500sm@2x.png 2x, /assets/img/design/prize/500sm@3x.png 3x"
+							alt="500 000 ₽">
+					</picture>
 					<div class="prize-txt-box">
 						<span class="prize-txt">
 							Выиграет 1 предприниматель на
@@ -27,11 +43,20 @@
 			</div> <!-- </ .prize-column-box -->
 			<div class="prize-column-box">
 				<div class="prize-column prize-column_200">
-					<div class="prize-column-picture">
-						<img src="/assets/img/design/prize/200.png"
-								 srcset="/assets/img/design/prize/200@2x.png 2x, /assets/img/design/prize/200@3x.png 3x"
-								 alt="200 000 ₽">
-					</div>
+					<picture class="prize-picture">
+						{% for point in breakpoints %}
+							<source
+								media="(min-width: {{ point.val }}px)"
+								srcset="
+									/assets/img/design/prize/200{{ point.key }}.png,
+									/assets/img/design/prize/200{{ point.key }}@2x.png 2x,
+									/assets/img/design/prize/200{{ point.key }}@3x.png 3x">
+							{% endfor %}
+						<img
+							src="/assets/img/design/prize/200sm.png"
+							srcset="/assets/img/design/prize/200sm@2x.png 2x, /assets/img/design/prize/200sm@3x.png 3x"
+							alt="200 000 ₽">
+					</picture>
 					<div class="prize-txt-box prize-txt-box_circle">
 						<span class="prize-txt">
 							Выиграют 2 предпринимателя на продвижение в интернете и на Ozon
@@ -41,11 +66,20 @@
 			</div> <!-- </ .prize-column-box -->
 			<div class="prize-column-box">
 				<div class="prize-column prize-column_100">
-					<div class="prize-column-picture">
-						<img src="/assets/img/design/prize/100.png"
-								 srcset="/assets/img/design/prize/100@2x.png 2x, /assets/img/design/prize/100@3x.png 3x"
-								 alt="100 000 ₽">
-					</div>
+					<picture class="prize-picture">
+						{% for point in breakpoints %}
+							<source
+								media="(min-width: {{ point.val }}px)"
+								srcset="
+									/assets/img/design/prize/100{{ point.key }}.png,
+									/assets/img/design/prize/100{{ point.key }}@2x.png 2x,
+									/assets/img/design/prize/100{{ point.key }}@3x.png 3x">
+							{% endfor %}
+						<img
+							src="/assets/img/design/prize/100sm.png"
+							srcset="/assets/img/design/prize/100sm@2x.png 2x, /assets/img/design/prize/100sm@3x.png 3x"
+							alt="100 000 ₽">
+					</picture>
 					<div class="prize-txt-box">
 						<span class="prize-txt">
 							Выиграют 3 предпринимателя на
@@ -56,11 +90,20 @@
 			</div> <!-- </ .prize-column-box -->
 			<div class="prize-column-box">
 				<div class="prize-column prize-column_20">
-					<div class="prize-column-picture">
-						<img src="/assets/img/design/prize/20.png"
-								 srcset="/assets/img/design/prize/20@2x.png 2x, /assets/img/design/prize/20@3x.png 3x"
-								 alt="20 000 ₽">
-					</div>
+					<picture class="prize-picture">
+						{% for point in breakpoints %}
+							<source
+								media="(min-width: {{ point.val }}px)"
+								srcset="
+									/assets/img/design/prize/20{{ point.key }}.png,
+									/assets/img/design/prize/20{{ point.key }}@2x.png 2x,
+									/assets/img/design/prize/20{{ point.key }}@3x.png 3x">
+							{% endfor %}
+						<img
+							src="/assets/img/design/prize/20sm.png"
+							srcset="/assets/img/design/prize/20sm@2x.png 2x, /assets/img/design/prize/20sm@3x.png 3x"
+							alt="20 000 ₽">
+					</picture>
 					<div class="prize-txt-box prize-txt-box_circle">
 						<span class="prize-txt">
 							Выиграют 10 предпринимателей <br>

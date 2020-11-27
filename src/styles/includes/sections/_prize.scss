@@ -2,22 +2,34 @@
 	margin-top: -5px;
 	position: relative;
 	z-index: 10;
+
+	@include media-down(lg) {
+		margin-top: -3px;
+	}
 }
 
 .prize-top {
 	position: relative;
-	margin: auto;
-	width: map-get($breakpoints, lg) + 8;
 	height: 80px;
 	border: 5px solid $dark-blue;
-	border-bottom-width: 0;
-	border-radius: 0 10px 0 0;
+	border-bottom-width: 0 !important;
+	border-radius: 10px 10px 0 0;
 
 	&::before {
 		content: url(/assets/img/design/join/join-vertical-dots.svg);
 		position: absolute;
 		right: 15px;
 		top: 20px;
+	}
+
+	@include media-down(lg) {
+		margin-right: 20px;
+		border-width: 3px;
+
+		&::before {
+			top: 10px;
+			transform: scale(.65);
+		}
 	}
 }
 
@@ -32,27 +44,29 @@
 		font-weight: 500;
 		font-size: 48px;
 		color: $dark-blue;
+
+		@include media-down(lg) {
+			font-size: 36px;
+			padding: 0 97px;
+		}
 	}
 }
 
 .prize-body {
 	position: relative;
-	margin: 0 auto 120px;
-	max-width: 1070px;
-	background:
-		url(/assets/img/design/prize/sock.png) no-repeat,
-		url(/assets/img/design/prize/prize-bg-lg.svg) no-repeat,
-		url(/assets/img/design/prize/prize-grid.svg) no-repeat;
-	background-position: 190px 715px, 0 0, 50% 0;
-	background-size: 104px 158px, 1000px, 936px;
+	margin: auto;
+	padding-bottom: 120px;
 
 	&-grid {
+		position: relative;
 		display: flex;
 		justify-content: space-between;
 		flex-wrap: wrap;
 		margin: 40px auto 50px;
 		width: 936px;
 		height: 936px;
+		background: url(/assets/img/design/prize/prize-grid.svg) no-repeat;
+		background-size: 100%;
 
 		@include media-down(lg) {
 			width: 776px;
@@ -86,6 +100,15 @@
 	font-size: 24px;
 	line-height: 1.1;
 	font-weight: 300;
+
+	@include media-down(lg) {
+		font-size: 20px;
+		line-height: 24px;
+
+		br {
+			display: none;
+		}
+	}
 }
 
 .prize-column-box {
@@ -97,13 +120,27 @@
 
 	&_500 {
 		top: 15px;
-		right: 75px;
+		right: 155px;
 
 		.prize-txt-box {
 			bottom: -35px;
 			right: 10px;
 			left: -80px;
-			min-height: 100px;
+			height: 100px;
+		}
+
+		@include media-down(lg) {
+			top: 22px;
+			right: 55px;
+
+			.prize-txt-box {
+				right: -32px;
+				bottom: -55px;
+				left: 51px;
+				padding-left: 21px;
+				padding-right: 18px;
+				height: 120px;
+			}
 		}
 	}
 
@@ -122,6 +159,24 @@
 				background: $yellow;
 			}
 		}
+
+		@include media-down(lg) {
+			top: 82px;
+			right: 7px;
+
+			.prize-txt-box {
+				left: 75px;
+				bottom: -45px;
+				width: 307px;
+				height: 96px;
+				padding-left: 8px;
+				padding-right: 15px;
+
+				&::before {
+					left: -23px;
+				}
+			}
+		}
 	}
 
 	&_100 {
@@ -132,7 +187,8 @@
 			right: -70px;
 			bottom: -35px;
 			left: -20px;
-			min-height: 90px;
+			height: 90px;
+			padding-left: 18px;
 
 			&::before {
 				content: '';
@@ -141,8 +197,29 @@
 				right: 60px;
 				width: 72px;
 				height: 73px;
-				background: url(/assets/img/design/prize/prize-icon-star.svg);
+				background: url(/assets/img/design/prize/prize-icon-star.svg) no-repeat;
 				background-size: 100%;
+			}
+		}
+
+		@include media-down(lg) {
+			bottom: 55px;
+			left: 37px;
+
+			.prize-txt-box {
+				right: -52px;
+				bottom: -40px;
+				left: 41px;
+				height: 95px;
+				padding-left: 18px;
+				padding-right: 20px;
+
+				&::before {
+					width: 44px;
+					height: 45px;
+					top: -35px;
+					right: -2px;
+				}
 			}
 		}
 	}
@@ -162,14 +239,100 @@
 				background: $pink;
 			}
 		}
+
+		@include media-up(lg) {
+			.prize-txt-box {
+				padding-left: 27px;
+			}
+		}
+
+		@include media-down(lg) {
+			right: 60px;
+			bottom: -30px;
+
+			.prize-txt-box {
+				right: -88px;
+				bottom: -29px;
+				left: 32px;
+				height: 78px;
+			}
+		}
 	}
 }
 
 .prize-businessmen {
 	position: absolute;
 	bottom: 45px;
-	left: 355px;
+	left: 290px;
 	width: 273px;
 	height: 118px;
 	background: url(/assets/img/design/prize/businessmen.svg) no-repeat;
+	background-size: 100%;
+
+	@include media-down(lg) {
+		width: 204px;
+		height: 88px;
+		bottom: 20px;
+		left: 243px;
+	}
+}
+
+.prize-bg {
+	position: absolute;
+	height: auto;
+
+	&_circle {
+		top: 35px;
+		left: 385px;
+	}
+
+	&_garland {
+		top: 0;
+		right: 75px;
+	}
+
+	&_pink-curve {
+		bottom: 165px;
+		left: -70px;
+	}
+
+	&_flag {
+		right: 0;
+		bottom: 50px;
+	}
+
+	&_sock {
+		width: 104px;
+		bottom: 60px;
+		left: 125px;
+	}
+
+	@include media-down(lg) {
+		&_circle {
+			top: 7px;
+			left: 366px;
+			width: 115px;
+		}
+
+		&_garland {
+			width: 140px;
+			right: 130px;
+		}
+
+		&_pink-curve {
+			bottom: 70px;
+			left: -50px;
+		}
+
+		&_flag {
+			bottom: 25px;
+			width: 170px;
+		}
+
+		&_sock {
+			width: 80px;
+			bottom: -40px;
+			left: 100px;
+		}
+	}
 }

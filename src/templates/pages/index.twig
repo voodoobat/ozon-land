@@ -1,5 +1,10 @@
 {% extends '../layouts/default.twig' %}
 {% set title = 'Index' %}
+{% set breakpoints = [
+	{ key: 'lg', val: 1416 },
+	{ key: 'md', val: 936 },
+	{ key: 'sm', val: 640 }
+] %}
 
 {% block styles %}
 	{# Убрать при билде #}
