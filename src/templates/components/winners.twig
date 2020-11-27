@@ -1,0 +1,38 @@
+<section class="winners">
+	<div class="winners-container">
+		<h1 class="winners-title">Большое дело за малым – мечтайте! </h1>
+		<h3 class="winners-subtitle">Их мечты стали реальностью. У вас тоже получится!</h3>
+		<div class="winners-wrap">
+			<div class="winners-arrow winners-arrow_role_prev">
+				<svg width="16" height="32" viewBox="0 0 16 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M13.65 31.82L0 15.19L13.69 0L15.92 2.01L3.96 15.28L15.97 29.92L13.65 31.82Z"
+						  fill="black" />
+				</svg>
+			</div>
+			<div class="winners-pagination"></div>
+			<div class="winners-slider swiper-container">
+				<div class="swiper-wrapper">
+					{% for user in users %}
+						<div class="winners-item swiper-slide">
+							<span class="winners-item__counter">{{ loop.index }}/{{ users.length }}</span>
+							<div class="winners-item__image">
+								<img src="/assets/img/winners/{{ loop.index }}.jpg" alt="{{ user.name }}">
+							</div>
+							<div class="winners-item__info">
+								<div class="winners-item__name">{{ user.name }}</div>
+								<div class="winners-item__position">{{ user.position }}</div>
+								<div class="winners-item__description">{{ user.description }}</div>
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+			<div class="winners-arrow winners-arrow_role_next">
+				<svg width="16" height="32" viewBox="0 0 16 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M2.32 2.93243e-05L15.97 16.63L2.28 31.8201L0.0500042 29.8101L12.01 16.5401L5.47671e-06 1.90003L2.32 2.93243e-05Z"
+						  fill="black" />
+				</svg>
+			</div>
+		</div>
+	</div>
+</section>

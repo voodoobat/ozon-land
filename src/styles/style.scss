@@ -3,6 +3,7 @@
 @import "includes/fonts";
 
 #business-dream {
+	@import "libs/swiper/swiper";
 	font-family: "reg", -apple-system, system-ui, blinkmacsystemfont, "Lucida Grande", "Lucida Sans Unicode", "sans-serif";
 
 	*,
@@ -62,8 +63,45 @@
 		}
 	}
 
+	h1 {
+		margin: 0;
+		font-weight: 500;
+		font-size: 48px;
+		line-height: 50px;
+		color: $dark-blue;
+
+		@include adaptive(1024) {
+			font-size: 36px;
+			line-height: 40px;
+		}
+
+		@include adaptive(480) {
+			font-size: 30px;
+			line-height: 32px;
+		}
+	}
+
+	h3 {
+		margin: 0;
+		font-size: 36px;
+		line-height: 50px;
+		color: $dark-blue;
+
+		@include adaptive(1024) {
+			font-size: 24px;
+			line-height: 28px;
+		}
+
+		@include adaptive(480) {
+			font-size: 18px;
+			line-height: 22px;
+			font-weight: 400;
+		}
+	}
+
 	@import "includes/sections/dreamers";
 	@import "includes/sections/prize";
 	@import "includes/sections/join";
 	@import "includes/sections/announce-winners";
+	@import "includes/sections/winners";
 }
