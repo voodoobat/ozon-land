@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	new Swiper('.feed-slider', {
 		slidesPerView: 1,
 		slidesPerColumn: 1,
-		slidesPerColumnFill: 'column',
+		slidesPerColumnFill: 'row',
 		spaceBetween: 20,
 		navigation: {
 			prevEl: '.feed-arrow.feed-arrow_role_prev',
@@ -14,7 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
 		},
 		breakpoints: {
 			1024: {
-				spaceBetween: 24
+				spaceBetween: 24,
+				slidesPerColumn: 2,
+				slidesPerView: 4
 			},
 			900: {
 				slidesPerColumn: 2,

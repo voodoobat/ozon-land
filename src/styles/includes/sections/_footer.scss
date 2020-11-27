@@ -1,0 +1,65 @@
+.footer {
+	color: $dark-blue;
+	padding-top: 20px;
+	position: relative;
+
+	&-container {
+		@extend %container;
+		max-width: 950px;
+		position: relative;
+		transform: translateY(50%);
+
+		@include adaptive(640) {
+			transform: none;
+		}
+	}
+
+	&-tile {
+		background-color: #fff;
+		border: 3px solid $dark-blue;
+		font-weight: 500;
+		font-size: 48px;
+		line-height: 50px;
+		text-align: center;
+		margin-right: 15px;
+		box-shadow: 14px 14px 0 0 $pink;
+		z-index: 4;
+		position: relative;
+		padding: 5px 0;
+
+		@include adaptive(1024) {
+			font-size: 36px;
+			line-height: 40px;
+		}
+		@include adaptive(640) {
+			margin-right: -10px;
+			margin-left: -40px;
+			padding-left: 20px;
+			font-size: 30px;
+			line-height: 34px;
+		}
+	}
+
+	&-bottom {
+		height: 250px;
+		background-color: $blue;
+	}
+
+	&-tree {
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		bottom: 0;
+
+		@include adaptive(480){
+			left: 15px;
+			transform: none;
+		}
+	}
+
+	&-garland {
+		position: absolute;
+		top: calc(100% + 14px);
+		right: 32px;
+	}
+}

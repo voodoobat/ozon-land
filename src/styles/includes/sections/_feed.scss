@@ -129,11 +129,13 @@
 	&-design {
 		position: absolute;
 		top: 0;
-		left: 0;
-		right: 0;
 		bottom: 0;
 		z-index: 1;
 		pointer-events: none;
+		max-width: 1420px;
+		width: 100%;
+		left: 50%;
+		transform: translateX(-50%);
 
 		& ~ .feed-container {
 			z-index: 2;
