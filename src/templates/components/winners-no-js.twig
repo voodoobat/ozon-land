@@ -1,0 +1,23 @@
+<section class="winners">
+	<div class="winners-container">
+		<h1 class="winners-title">Большое дело за малым – мечтайте! </h1>
+		<h3 class="winners-subtitle">Их мечты стали реальностью. У вас тоже получится!</h3>
+		<div class="winners-wrap">
+			<div class="winners-slider">
+				{% for user in users %}
+					<div class="winners-item winners-item_no_js">
+						<span class="winners-item__counter">{{ loop.index }}/{{ users.length }}</span>
+						<div class="winners-item__image">
+							<img src="/assets/img/winners/{{ loop.index }}.jpg" alt="{{ user.name }}">
+						</div>
+						<div class="winners-item__info">
+							<div class="winners-item__name">{{ user.name }}</div>
+							<div class="winners-item__position">{{ user.position }}</div>
+							<div class="winners-item__description">{{ user.description }}</div>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</section>
