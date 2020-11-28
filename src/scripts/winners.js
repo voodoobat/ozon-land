@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	if (prizes) {
 		new Swiper('.winners-list', {
-			slidesPerView: 1,
+			slidesPerView: 'auto',
 			spaceBetween: 45,
 			navigation: {
 				prevEl: '.winners-arrow-second_role_prev',
