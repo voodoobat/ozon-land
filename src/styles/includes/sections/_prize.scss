@@ -23,7 +23,6 @@
 	}
 
 	@include media-down(lg) {
-		margin-right: 20px;
 		border-width: 3px;
 		border-left-width: 0;
 		//border-radius: 0 10px 0 0;
@@ -32,10 +31,6 @@
 			top: 10px;
 			transform: scale(.65);
 		}
-	}
-
-	@include media-down(sm) {
-		margin-right: 0;
 	}
 }
 
@@ -447,7 +442,6 @@
 	}
 }
 
-
 @include media-down(md) {
 	.prize-body-grid {
 		display: block;
@@ -455,7 +449,12 @@
 	}
 
 	.prize-column-box {
-		max-width: 490px;
+		display: flex;
+		max-width: 100%;
+
+		&:nth-child(odd) {
+			justify-content: flex-end;
+		}
 	}
 
 	.prize-txt {
@@ -470,8 +469,8 @@
 		left: auto;
 
 		.prize-txt-box {
-			right: -3px;
 			width: auto;
+			max-width: 260px;
 		}
 
 		&_500 {
@@ -486,11 +485,12 @@
 
 		&_200 {
 			margin-top: 87px;
-			margin-left: 22px;
+			margin-right: 30px;
 
 			.prize-txt-box {
 				left: 37px;
 				bottom: -59px;
+				width: 255px;
 				padding-left: 15px;
 
 				&::before {
@@ -517,9 +517,11 @@
 
 		&_20 {
 			margin-top: 93px;
-			margin-left: 25px;
+			margin-right: 60px;
 
 			.prize-txt-box {
+				width: 265px;
+
 				&::before {
 					top: -22px;
 					left: 5px;
@@ -531,5 +533,28 @@
 	.prize-businessmen {
 		bottom: 52px;
 		left: 37px;
+	}
+}
+
+@include media-between(620px, md) {
+
+	.prize-body-grid {
+		padding: 0 60px 0 40px;
+		min-height: 882px;
+	}
+
+	.prize-bg_flag {
+		top: -10px;
+	}
+
+	.prize-column {
+		margin-left: 0;
+		margin-right: 0;
+
+		&_200,
+		&_100,
+		&_20 {
+			margin-top: -30px;
+		}
 	}
 }
